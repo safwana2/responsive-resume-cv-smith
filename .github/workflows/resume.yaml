@@ -33,8 +33,8 @@ jobs:
           region: ${{ secrets.AWS_REGION }}
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: sabato
-          environment_name: Sabato-env
+          application_name: ${{ env.AWS_APP_NAME }}
+          environment_name: ${{ env.AWS_ENV_NAME }}
           version_label: v-${{ github.run_number }}
           existing_bucket_name: ${{ secrets.EB_BUCKET_NAME }}
           deployment_package: application.zip
